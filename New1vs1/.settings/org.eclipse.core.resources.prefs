@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/de/OnevsOne/Arena/SpectatorManager/ArenaMenu.java=UTF-8
+encoding//src/de/OnevsOne/Commands/MainCommand.java=UTF-8
+encoding//src/de/OnevsOne/Commands/VariableCommands/KitStats.java=UTF-8
+encoding//src/de/OnevsOne/DataBases/DBMainManager.java=UTF-8
+encoding//src/de/OnevsOne/Methods/Core/MainScheduler.java=UTF-8
+encoding//src/de/OnevsOne/Methods/Tournament/FightEndManager.java=UTF-8
+encoding//src/de/OnevsOne/Methods/Tournament/Tournament_InvCreator.java=UTF-8
+encoding//src/de/OnevsOne/Methods/getItems.java=UTF-8
+encoding//src/de/OnevsOne/main.java=UTF-8

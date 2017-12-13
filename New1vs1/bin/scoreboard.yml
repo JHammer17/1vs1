@@ -1,0 +1,6 @@
+groups:
+ exmpGroup:
+  prefix: "Example Prefix"
+  suffix: "Example suffix"
+  group: "ExmpGroup"
+  permission: "1vs1.sb.ExmpGroup"

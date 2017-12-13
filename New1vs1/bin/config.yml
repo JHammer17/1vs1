@@ -1,0 +1,106 @@
+# ================================ #
+# 		1vs1 - Like Timolia		   #
+#  		 	by JHammer17		   #
+# ================================ #
+#TEST
+config:
+  BungeeMode:
+    Enabled: false
+    LobbyServer: Lobby
+  ArenaStartTimer: 3
+  Soupheal: 3.5
+  maxArenaEntitys: 16
+  twoStepArenaReset: true
+  MySQL:
+    Enabled: false
+    Domain: localhost
+    Port: 3306
+    Database: database
+    Username: 1vs1
+    Password: '-'
+  ArenaCheckTimer: 10
+  NoFreeArenaMessageTimer: 5
+  ArenaBuildDelay: 5
+  ArenaDestroyDelay: 5
+  minArenaBuildDistanceBottom: 1
+  minArenaBuildDistanceTop: 2
+  minArenaBuildDistanceWalls: 2
+  saveStats: true
+  loadChunks: false
+  arenaRegionLeaveDamage: 1.5
+  showArenaNamesSpectatorGUI: true
+  toggleCoolDown: 150
+  playAllBestOfGames: false
+  saveInvs: true
+  checkDatabaseConnection: true
+  updateNotification: true
+  updateNotificationJoin: true
+  autoEndmatch: 300
+  useAsyncMapReset: false
+  scoreBoardName: 1vs1
+  overrideJoinMsg: false
+  saveOldScoreboard: true
+  useScoreboard: true
+  useBlockyMapReset: true
+  maxBlocksPerTick: 500
+  maxTeamSizeUser: 2
+  maxTeamSizePremium: 4
+  maxTeamSizeSpecial: 17
+  useEconomySystem: true
+  economyNormalWinAdmin: 8
+  economyNormalWinPremium: 2
+  economyNormalWinSpecial: 4
+  economyNormalWinUser: 1
+  economyTournamnetWinAdmin: 100
+  economyTournamnetWinPremium: 30
+  economyTournamnetWinSpecial: 60
+  economyTournamnetWinUser: 15
+  economyTournamnetKillAdmin: 16
+  economyTournamnetKillPremium: 4
+  economyTournamnetKillSpecial: 8
+  economyTournamnetKillUser: 2
+  maxTNTGame: 64
+  silentBlackDealer: true
+  silentPrefVillager: true
+  silentQueue: true
+  msgMeWhenIStupid: true
+  Ranking:
+    Rank9: 20
+    Rank8: 50
+    Rank7: 120
+    Rank6: 150
+    Rank5: 380
+    Rank4: 450
+    Rank3: 500
+    Rank2: 750
+    Rank1: 1000
+    rankPointsWins: 1
+    rankPointsLose: -1
+  ACS:
+    Enabled: true
+    minArenas: 1
+    maxArenas: 10
+    world: 1vs1-ACS
+    disX: 0
+    disZ: 0
+  topPlaces: 10
+  lastTimedStatReset: 0
+  TimedStatResetTime: 2592000000
+  Items:
+    ChallangerItemID: 276
+    SpecatorItemID: 370
+    SettingsItemID: 404
+    LeaveItemID: 347
+    ChallangerItemSlot: 1
+    SpecatorItemSlot: 2
+    SettingsItemSlot: 8
+    LeaveItemSlot: 9
+    BookItemSlot: 3
+    TournamentItemSlot: 5
+    RankItemSlot: 7
+    TournamentItemID: 399
+  blockedCommands:
+  - spawn
+  - warp
+  - back
+  useBlockedCmdsAsWhitelist: false

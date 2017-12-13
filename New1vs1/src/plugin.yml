@@ -1,0 +1,8 @@
+name: 1vs1
+author: JHammer17
+version: 2.3a
+main: de.OnevsOne.main
+description: Ein vollkommen kostenloses 1vs1 Plugin. Nachempfunden von Timolia
+
+commands:
+ 1vs1:
