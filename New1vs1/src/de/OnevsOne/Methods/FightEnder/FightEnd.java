@@ -36,8 +36,8 @@ import net.md_5.bungee.api.ChatColor;
  * Methoden:
  * 
  * EndGame(Player Winner, Player Loser, String Arena); //Leitet das Ende eines Kampfes ein.
- * resetPlayer(Player p, boolean clear); //Löscht alle Spielerdaten.
- * addWarteschlange(final Player p); //Fügt Spieler nach 3 Sekunden zur Warteschlange hinzu.
+ * resetPlayer(Player p, boolean clear); //LÃ¶scht alle Spielerdaten.
+ * addWarteschlange(final Player p); //FÃ¼gt Spieler nach 3 Sekunden zur Warteschlange hinzu.
  * 
  * 
  */
@@ -113,7 +113,7 @@ public class FightEnd {
 			wasTournament = true;
 		}
 		
-		//Nach Verögerung Arena zum Löschen freigeben
+		//Nach VerÃ¶gerung Arena zum LÃ¶schen freigeben
 		
 		if(!wasTournament) {
 			
@@ -197,14 +197,14 @@ public class FightEnd {
 					  int Games = Player1+Player2;
 					  Games++;
 					  
-					  	  /*Abfrage, ob es mehr Kämpfe geben wird*/
+					  	  /*Abfrage, ob es mehr KÃ¤mpfe geben wird*/
 						  moreFights = true;
 						  if(Datas[2].equalsIgnoreCase("" + Games)) {
 						   moreFights = false;
 						  }
 						  /*-----*/
 						  
-						  /*Abfrage, wieviele Wins gemacht werden müssen, bis ein klarer Gewinner fest steht*/
+						  /*Abfrage, wieviele Wins gemacht werden mÃ¼ssen, bis ein klarer Gewinner fest steht*/
 						  int minGames = 2;
 						  if(Datas[2].equalsIgnoreCase("5")) {
 							  minGames = 3;
@@ -246,7 +246,7 @@ public class FightEnd {
 							  }
 							  /*-----*/
 							  
-							  /*Abfrage ob mehr Kämpfe gemacht werden müssen*/
+							  /*Abfrage ob mehr KÃ¤mpfe gemacht werden mÃ¼ssen*/
 							  if(!moreFights) {
 								  plugin.BestOfSystem.remove(use);
 							  }
@@ -276,7 +276,7 @@ public class FightEnd {
 					   moreFights = false;
 					  }
 					  
-					  /*Abfrage, wieviele Wins gemacht werden müssen, bis ein klarer Gewinner fest steht*/
+					  /*Abfrage, wieviele Wins gemacht werden mÃ¼ssen, bis ein klarer Gewinner fest steht*/
 					  int minGames = 2;
 					  if(Datas[2].equalsIgnoreCase("5")) {
 						  minGames = 3;
@@ -370,7 +370,7 @@ public class FightEnd {
 					 /*Spieler 2 hat gewonnen*/
 					 PlayerBestOfsPrefs pref = PlayerBestOfsPrefs.BestOf3;
 					 int prefGame = Integer.parseInt(Datas2[2]);
-					 String BestofType = "§cBest of 3";
+					 String BestofType = "Â§cBest of 3";
 					 
 					 
 					 if(prefGame == 3){
@@ -712,6 +712,8 @@ public class FightEnd {
 		plugin.getOneVsOnePlayer(p).setpState(PlayerState.InLobby);
 		plugin.getOneVsOnePlayer(p).setDoubleJumpUsed(false);
 		plugin.getOneVsOnePlayer(p).setSpecator(null);
+		plugin.getOneVsOnePlayer(p).setChallanged(new ArrayList<Player>());
+		plugin.getOneVsOnePlayer(p).setChallangedBy(new ArrayList<Player>());
 		
 		if(clear) {
 		 p.setExp(0);
