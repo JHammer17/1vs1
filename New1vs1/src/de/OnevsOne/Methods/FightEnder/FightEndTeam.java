@@ -32,8 +32,8 @@ import de.OnevsOne.States.PlayerState;
  * Methoden:
  * 
  * EndGame(Player Winner, Player Loser, String Arena); //Leitet das Ende eines Kampfes ein.
- * resetPlayer(Player p, boolean clear); //Löscht alle Spielerdaten.
- * addWarteschlange(final Player p); //Fügt Spieler nach 3 Sekunden zur Warteschlange hinzu.
+ * resetPlayer(Player p, boolean clear); //LÃ¶scht alle Spielerdaten.
+ * addWarteschlange(final Player p); //FÃ¼gt Spieler nach 3 Sekunden zur Warteschlange hinzu.
  * 
  * 
  */
@@ -150,7 +150,7 @@ public class FightEndTeam {
 		
 		
 		
-		//Nach Verögerung Arena zum Löschen freigeben
+		//Nach VerÃ¶gerung Arena zum LÃ¶schen freigeben
 		Bukkit.getScheduler().runTaskLater(plugin, new Runnable() {
 			
 		
@@ -368,6 +368,8 @@ public class FightEndTeam {
 		plugin.getOneVsOnePlayer(p).setPosition(0);
 		plugin.getOneVsOnePlayer(p).setpState(PlayerState.InLobby);
 		plugin.getOneVsOnePlayer(p).setDoubleJumpUsed(false);
+		plugin.getOneVsOnePlayer(p).setChallanged(new ArrayList<Player>());
+		plugin.getOneVsOnePlayer(p).setChallangedBy(new ArrayList<Player>());
 		
 		if(clear) {
 		 p.setExp(0);
