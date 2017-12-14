@@ -5,11 +5,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import org.bukkit.Color;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import de.OnevsOne.main;
 import de.OnevsOne.Arena.Reseter.Builder.DeleteArena;
@@ -30,10 +33,10 @@ import de.OnevsOne.States.OneVsOnePlayer;
  */
 
 /*
- * Diese Klasse sorgt für das Joinen einer Arena.
+ * Diese Klasse sorgt fÃ¼r das Joinen einer Arena.
  * 
  * Methoden: 
- * joinArena(Player pos1, Player pos2, String ArenaID,boolean fromWarteschlange, String Kit) -> Sorgt dafür das man eine Arena beitrit
+ * joinArena(Player pos1, Player pos2, String ArenaID,boolean fromWarteschlange, String Kit) -> Sorgt dafÃ¼r das man eine Arena beitrit
  * [PRIVAT] resetManager(String ArenaID) -> Startet einen Arenareset
  * 
  */
@@ -266,6 +269,79 @@ public class ArenaJoin {
 		
 		while(plugin.arenaTeams.containsKey(ArenaID)) plugin.arenaTeams.remove(ArenaID);
 		
+		
+		//0 Boots
+		//1 Legs
+		//2 Torso
+		//3 Helmet
+		
+		
+		
+		
+		ItemStack bootsP1 = pos1.getInventory().getArmorContents()[0];
+		if(bootsP1.getType() == Material.LEATHER_BOOTS) {
+			LeatherArmorMeta bootsP1Meta = (LeatherArmorMeta) bootsP1.getItemMeta();
+			bootsP1Meta.setColor(Color.RED);
+			bootsP1.setItemMeta(bootsP1Meta);
+		}
+		
+		
+		
+		ItemStack legsP1 = pos1.getInventory().getArmorContents()[1];
+		if(legsP1.getType() == Material.LEATHER_LEGGINGS) {
+			LeatherArmorMeta legsP1Meta = (LeatherArmorMeta) legsP1.getItemMeta();
+			legsP1Meta.setColor(Color.RED);
+			legsP1.setItemMeta(legsP1Meta);
+		}
+		
+		
+		ItemStack torsoP1 = pos1.getInventory().getArmorContents()[2];
+		if(torsoP1.getType() == Material.LEATHER_CHESTPLATE) {
+			LeatherArmorMeta torsoP1Meta = (LeatherArmorMeta) torsoP1.getItemMeta();
+			torsoP1Meta.setColor(Color.RED);
+			torsoP1.setItemMeta(torsoP1Meta);
+		}
+		
+		ItemStack helmetP1 = pos1.getInventory().getArmorContents()[3];
+		
+		if(helmetP1.getType() == Material.LEATHER_HELMET) {
+			LeatherArmorMeta helmetP1Meta = (LeatherArmorMeta) helmetP1.getItemMeta();
+			helmetP1Meta.setColor(Color.RED);
+			helmetP1.setItemMeta(helmetP1Meta);
+		}
+		
+		
+		ItemStack bootsP2 = pos2.getInventory().getArmorContents()[0];
+		if(bootsP2.getType() == Material.LEATHER_BOOTS) {
+		 LeatherArmorMeta bootsP2Meta = (LeatherArmorMeta) bootsP2.getItemMeta();
+		 bootsP2Meta.setColor(Color.BLUE);
+		 bootsP2.setItemMeta(bootsP2Meta);
+		}
+		
+		 ItemStack legsP2 = pos2.getInventory().getArmorContents()[1];
+		if(legsP2.getType() == Material.LEATHER_LEGGINGS) {
+		
+		 LeatherArmorMeta legsP2Meta = (LeatherArmorMeta) legsP2.getItemMeta();
+		 legsP2Meta.setColor(Color.BLUE);
+		 legsP2.setItemMeta(legsP2Meta);
+		}
+		ItemStack torsoP2 = pos2.getInventory().getArmorContents()[2];
+		if(torsoP2.getType() == Material.LEATHER_CHESTPLATE) {
+			LeatherArmorMeta torsoP2Meta = (LeatherArmorMeta) torsoP2.getItemMeta();
+			torsoP2Meta.setColor(Color.BLUE);
+			torsoP2.setItemMeta(torsoP2Meta);
+		}
+		
+		
+		
+		ItemStack helmetP2 = pos2.getInventory().getArmorContents()[3];
+		if(helmetP2.getType() == Material.LEATHER_HELMET) {
+			LeatherArmorMeta helmetP2Meta = (LeatherArmorMeta) helmetP2.getItemMeta();
+			helmetP2Meta.setColor(Color.BLUE);
+			helmetP2.setItemMeta(helmetP2Meta);
+		}
+		
+		
 	}
 	//-----------------------------------------
 
@@ -480,9 +556,9 @@ public class ArenaJoin {
 				 String[] data = {pos1.getPlayer().getUniqueId().toString(),pos2.getPlayer().getUniqueId().toString(),"" + Max,"0","0", Kit};
 				 plugin.BestOfSystem.put(pos1.getPlayer().getUniqueId(), data);
 				 if(Max != 1) {
-					String title = "§cBest of 3";
-					if(Max == 3) title = "§cBest of 3";
-					 else if(Max == 5) title = "§cBest of 5";
+					String title = "Â§cBest of 3";
+					if(Max == 3) title = "Â§cBest of 3";
+					 else if(Max == 5) title = "Â§cBest of 5";
 					
 					for(Player playersP1 : pos1.getAll()) {
 						TitleAPI.sendTitle(playersP1, 10, 20*2, 10, title, plugin.msgs.getMsg("bestOfSubTitle").replaceAll("%Pos1%", pos1.getPlayer().getDisplayName()).replaceAll("%Pos2%", pos2.getPlayer().getDisplayName()).replaceAll("%Points1%", "0").replaceAll("%Points1%", "0"));
@@ -512,10 +588,87 @@ public class ArenaJoin {
 		
 		plugin.arenaTeams.put(ArenaID, players);
 		
+		
+		
+		
+		
+		
+		for(Player t1 : pos1.getAll()) {
+			//0 Boots
+			//1 Legs
+			//2 Torso
+			//3 Helmet
+			
+			ItemStack bootsP1 = t1.getInventory().getArmorContents()[0];
+			if(bootsP1.getType() == Material.LEATHER_BOOTS) {
+				LeatherArmorMeta bootsP1Meta = (LeatherArmorMeta) bootsP1.getItemMeta();
+				bootsP1Meta.setColor(Color.RED);
+				bootsP1.setItemMeta(bootsP1Meta);
+			}
+			
+			
+			
+			ItemStack legsP1 = t1.getInventory().getArmorContents()[1];
+			if(legsP1.getType() == Material.LEATHER_LEGGINGS) {
+				LeatherArmorMeta legsP1Meta = (LeatherArmorMeta) legsP1.getItemMeta();
+				legsP1Meta.setColor(Color.RED);
+				legsP1.setItemMeta(legsP1Meta);
+			}
+			
+			
+			ItemStack torsoP1 = t1.getInventory().getArmorContents()[2];
+			if(torsoP1.getType() == Material.LEATHER_CHESTPLATE) {
+				LeatherArmorMeta torsoP1Meta = (LeatherArmorMeta) torsoP1.getItemMeta();
+				torsoP1Meta.setColor(Color.RED);
+				torsoP1.setItemMeta(torsoP1Meta);
+			}
+			
+			ItemStack helmetP1 = t1.getInventory().getArmorContents()[3];
+			
+			if(helmetP1.getType() == Material.LEATHER_HELMET) {
+				LeatherArmorMeta helmetP1Meta = (LeatherArmorMeta) helmetP1.getItemMeta();
+				helmetP1Meta.setColor(Color.RED);
+				helmetP1.setItemMeta(helmetP1Meta);
+			}
+		}
+		
+		for(Player t2 : pos2.getAll()) {
+			ItemStack bootsP2 = t2.getInventory().getArmorContents()[0];
+			if(bootsP2.getType() == Material.LEATHER_BOOTS) {
+			 LeatherArmorMeta bootsP2Meta = (LeatherArmorMeta) bootsP2.getItemMeta();
+			 bootsP2Meta.setColor(Color.BLUE);
+			 bootsP2.setItemMeta(bootsP2Meta);
+			}
+			
+			 ItemStack legsP2 = t2.getInventory().getArmorContents()[1];
+			if(legsP2.getType() == Material.LEATHER_LEGGINGS) {
+			
+			 LeatherArmorMeta legsP2Meta = (LeatherArmorMeta) legsP2.getItemMeta();
+			 legsP2Meta.setColor(Color.BLUE);
+			 legsP2.setItemMeta(legsP2Meta);
+			}
+			ItemStack torsoP2 = t2.getInventory().getArmorContents()[2];
+			if(torsoP2.getType() == Material.LEATHER_CHESTPLATE) {
+				LeatherArmorMeta torsoP2Meta = (LeatherArmorMeta) torsoP2.getItemMeta();
+				torsoP2Meta.setColor(Color.BLUE);
+				torsoP2.setItemMeta(torsoP2Meta);
+			}
+			
+			
+			
+			ItemStack helmetP2 = t2.getInventory().getArmorContents()[3];
+			if(helmetP2.getType() == Material.LEATHER_HELMET) {
+				LeatherArmorMeta helmetP2Meta = (LeatherArmorMeta) helmetP2.getItemMeta();
+				helmetP2Meta.setColor(Color.BLUE);
+				helmetP2.setItemMeta(helmetP2Meta);
+			}
+		}
+		
+		
 	}
 	
 	
-	//resetManager(String ArenaID): Resetet die Arena, falls es nötig ist.
+	//resetManager(String ArenaID): Resetet die Arena, falls es nÃ¶tig ist.
 	private static void resetManager(String ArenaID) {
 		
 		if (plugin.existFile("Arenen/" + ArenaID + "/config")) {
